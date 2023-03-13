@@ -14,6 +14,11 @@ import List from '@mui/material/List';
 import { mainListItems, secondaryListItems } from './listItems';
 import Typography from '@mui/material/Typography';
 
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Stocks from './Stocks.js';
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -122,6 +127,33 @@ function DashboardContent() {
 			{secondaryListItems}
 		    </List>
 		</Drawer>
+		{/* Add Main Content */}
+		<Box
+          component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto',
+          }}
+        >
+          <Toolbar />
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Grid container spacing={3}>
+              {/* Yesterday's Stock Report */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Stocks />
+                </Paper>
+              </Grid>
+            </Grid>
+
+          </Container>
+        </Box>
+		
 	    </Box>
 	</ThemeProvider>
     );
