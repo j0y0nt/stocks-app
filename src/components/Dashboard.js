@@ -142,7 +142,42 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
+              <Grid container spacing={3}>
+		  {/* Chart */}
+		  <Grid item xs={12} md={8} lg={6}>
+                      <Paper
+			  sx={{
+			      p: 2,
+			      display: 'flex',
+			      flexDirection: 'column',
+			      height: 240,
+			      backgroundColor: 'rgb(16, 24, 40)',
+			      color: 'white',
+			  }}
+			  elevation={4}
+                      >
+			  <Typography variant="h5" component="h2">
+			      Welcome, AtoZee! 
+			  </Typography>
+                      </Paper>
+		  </Grid>
+
+		  <Grid item xs={12} md={8} lg={6}>
+                      <Paper
+			  sx={{
+			      p: 2,
+			      display: 'flex',
+			      flexDirection: 'column',
+			      height: 240,
+			     
+			  }}
+			  elevation={4}
+                      >
+			  <Typography variant="subtitle2" component="h2">
+			     Chart goes here. 
+			  </Typography>
+                      </Paper>
+		  </Grid>
               {/* Yesterday's Stock Report */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
